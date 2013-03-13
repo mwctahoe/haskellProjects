@@ -1,15 +1,14 @@
 module Main where
 
+import Control.Monad
+
 main = do
-  input <- return "hello"
-  putStrLn input
   putStrLn "quit the program? y/n"
   ans <- getLine
-  if ans /= "y" then do
+  when (ans /= "y") $ do
 	putStrLn "not quiting"
 	main
-  else return ()
-{-
+  {-
   putStrLn "Why did the banker leave his job?"
   answer <- getLine
   putStrLn (if answer == "he lost interest"
